@@ -2,25 +2,25 @@
 
 #### Chapter 2
 
-1.- How are most applications created?
+1. How are most applications created?
 They are created by superimposing one data model on another.
 
-2.- What was the purpose of the database relation model?
+2. What was the purpose of the database relation model?
 was to hide that implementation detail behind a cleaner interface.
 
-3.- What was NoSQL originally intended for?
+3. What was NoSQL originally intended for?
 It was simply intended as a catchy Twitter hashtag for a meeting in open source, distributed, and non-relational databases in 2009.
 
-4.- mentions an advantage of NOSQL databases over SQL:
+4. mentions an advantage of NOSQL databases over SQL:
 Greater scalability in very large data set or higher write performance.
 
-5.- What is polyglot persistence in DBs?
+5. What is polyglot persistence in DBs?
 Both relational and NOSQL databases will continue to be used in conjunction in the future.
 
-6.- How do you tell the disconnect between SQL data models?
+6. How do you tell the disconnect between SQL data models?
 Impedance mismatch. (Desajuste de impedencia).
 
-7.- What type of relationship and union is used routinely in relationships databases?
+7. What type of relationship and union is used routinely in relationships databases?
 Many-to-many relationships and unions are routinely used.
 
 
