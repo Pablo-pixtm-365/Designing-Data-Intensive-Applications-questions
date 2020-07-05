@@ -54,3 +54,38 @@ They are created by superimposing one data model on another.
 
 9.- What is needed to make a database with tree-B implementation resistant to locks?
 > Tree B implementations include an additional data structure on disk: a write-ahead record (WAL, also known as a redo record).
+
+
+#### Chapter 4
+
+1.- By what another name is the progressive update known?
+> Also known as a staged rollout.
+
+2.- Why is forward compatibility more complicated?
+> Forward compatibility can be more complicated as it requires older code to ignore additions made by a newer version of the code.
+
+3.- What is serialization or classification?
+> Translation of the memory representation into a sequence of bytes.
+
+4.- Mention some disadvantages of using xml and json as standardized encodings?
+> + XML cannot distinguish between a number and a string consisting of digits (except when referring to an external schema).
+> + JSON distinguishes strings and numbers, but does not distinguish integers and floating-point numbers, and does not specify a precision.
+> + JSON and XML do not support binary strings (byte sequences without character encoding).
+
+5.- What is the length of a binary encoding?
+> A length of 66 bytes.
+
+6.- In serialization methods like Thrift, when can we add a new field?
+> If you give each field a new tag number.
+
+7.- What about changing the datatype of a field?
+> There is a risk that values will lose precision or get trunca‐ted
+
+8.- What can we use in Avro to allow a field to be null?
+> We must use the union type. For example, union {null, long, string} field;
+
+9.- What acts as documentation and gives you an opportunity to check schema compatibility?
+> A schema version database.
+
+10.- Why is backward compatibility in a database important?
+> Because this means that a value in the database can be written by a newer version of the code, and later read by an older version of the code that is still running without losing the information if we are careful.
