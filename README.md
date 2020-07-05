@@ -68,9 +68,9 @@ They are created by superimposing one data model on another.
 > Translation of the memory representation into a sequence of bytes.
 
 4.- Mention some disadvantages of using xml and json as standardized encodings?
-> + XML cannot distinguish between a number and a string consisting of digits (except when referring to an external schema).
-> + JSON distinguishes strings and numbers, but does not distinguish integers and floating-point numbers, and does not specify a precision.
-> + JSON and XML do not support binary strings (byte sequences without character encoding).
+ + XML cannot distinguish between a number and a string consisting of digits (except when referring to an external schema).
+ + JSON distinguishes strings and numbers, but does not distinguish integers and floating-point numbers, and does not specify a precision.
+ + JSON and XML do not support binary strings (byte sequences without character encoding).
 
 5.- What is the length of a binary encoding?
 > A length of 66 bytes.
