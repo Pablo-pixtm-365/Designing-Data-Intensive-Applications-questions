@@ -89,3 +89,43 @@ They are created by superimposing one data model on another.
 
 10.- Why is backward compatibility in a database important?
 > Because this means that a value in the database can be written by a newer version of the code, and later read by an older version of the code that is still running without losing the information if we are careful.
+
+
+### Chapter 5
+
+1.- What is replication in a few words?
+> Replication means keeping a copy of the same data on multiple machines that are connected via a network.
+
+2.- How does leader-based replication work?
+> First a replica is defined as leader, this is the one in charge of writing the requests of the clients in their local storage, the other replicas are known as followers.
+> second, once the leader did the writing, the leader sends the data change to all the followers, known as replica or flow change. Literal followers follow the leader in making a local copy of his record.
+> Third, clients can read data from the leader or any follower but writes can only be done by the leader.
+
+3.- Mention an advantage and disadvantage of synchronous replication
+> Advantage:
+This ensures that the follower will have an up-to-date copy of the data that is consistent with the leader. If the leader suddenly fails, we can be sure that the data is still available on the follower.
+
+> Disadvantage:
+If the synchronous follower doesn’t respond (because it has crashed, there is a network failure, or for any other reason), the write cannot be processed. The leader must block all writes and wait until Synchronous Replica is available again.
+
+4.- What is the name of the process in which a follower becomes a leader?
+> Called failover.
+
+5.- When a replica is a good candidate to be a leader?
+> It is the replica with the most updated data changes from the previous leader, this in order to lose less information.
+
+6.- According to the book, what is the divided brain?
+> Two nodes both believe they are the leader.
+
+7.- Suppose the company where you work asks you to make a replication record of the data, but you do not have much experience on the subject, what implementation of replication records would you use and why?
+> Statement-based replication, because it is the simplest case, it is quite compact and there are still DBs that use it by default.
+
+8.- In what situation do you need a consistency of reading?
+> When the user sees the data shortly after writing, the new data may not have reached the replica yet, because it was inserted, but it cannot be read because it was not yet loaded into the followers.
+
+9.- Briefly, what does leader-based replication allow?
+allows more than one node to accept writes
+
+10.- Does it rarely make sense to use a multi-leader setup within a single data center? true / false and why?
+True, because the benefits rarely outweigh the added complexity.
+
