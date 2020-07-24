@@ -127,5 +127,37 @@ If the synchronous follower doesn’t respond (because it has crashed, there is 
 allows more than one node to accept writes
 
 10.- Does it rarely make sense to use a multi-leader setup within a single data center? true / false and why?
-True, because the benefits rarely outweigh the added complexity.
+> True, because the benefits rarely outweigh the added complexity.
 
+### Chapter 6
+
+1.- Why although each record belongs to exactly one partition, it can still be stored on several different nodes?
+> For fault tolerance.
+
+2.- When a node can store more than one partition?
+> When using a leader-follower replication model.
+
+3.- What is a skewed partition?
+> When the partition is unfair, so some partitions have more data or queries than others.
+
+4.- What are partition limits for?
+> To distribute the data evenly.
+
+5.- What is a consistent hash according to the book?
+> It is a way to evenly distribute the load through a caching system across the Internet, such as a content delivery network (CDN).
+
+6.- mentions a use of the concatenated index approach
+> Allows an elegant data model for one-to-many relationships, for example on a social networking site, a user can post many updates. Choosing the primary key for updates can efficiently retrieve all updates made by a particular user within a time interval, sorted by time stamp.
+
+7.- Is there a recipe or panacea for skewed workloads today?
+> There is no secret formula or something similar, the book mentions a technique that consists of adding a random number to the end of the key, the problem is that there is more work at the time of reading. 
+
+8.- Where are secondary indices common? And what are they useful for?
+> Are the foundation of relational databases and are also common in document databases and are useful for data modeling.
+
+9.- Mention one advantage and disadvantage of a global index:
+> Advantage: readings can be faster and more efficient.
+> Disadvantage: writes are slower and more complicated, because writing to a single document can now affect multiple documents.
+
+10.- According to the book, what is rebalancing?
+> The process of moving the load from one node in the cluster to another.
