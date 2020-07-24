@@ -161,3 +161,33 @@ allows more than one node to accept writes
 
 10.- According to the book, what is rebalancing?
 > The process of moving the load from one node in the cluster to another.
+
+### Chapter 7
+
+1.- According to the book, what is a transaction?
+> A transaction is a way for an application to group multiple reads and writes together into one logical unit. 
+
+2.- In a few words, how do we know if a system needs transactions?
+> We must understand exactly what security guarantees transactions can provide and what costs are associated with them.
+
+3.- Is it true or false that both relational and non-relational DBs support transactions?
+> True
+
+4.- What is the meaning of the acronym ACID?
+> Atomicity, Consistency, Insulation and Durability.
+
+5.- In ACID what is atomicity?
+> In general terms it means aborting or canceling a transaction due to an error made by the user or by the system itself, which allows the system to pretend that nothing happened.
+
+6.- In ACID, what is consistency?
+> It means that the DB is in good condition, that is, that the invariants data must always be true.
+
+7.- What is the only ACID term that references (property) databases? 
+> The consistency is a property of the application.
+
+8.- What is the disadvantage of using isolation in the sense of ACID?
+> It carries a performance penalty
+
+9.- What is a key feature of transactions?
+> Is that it can be safely aborted and reattempted if an error occurs.
+
